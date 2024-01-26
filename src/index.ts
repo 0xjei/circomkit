@@ -1,7 +1,4 @@
-import {Circomkit} from './circomkit';
-import ProofTester from './testers/proofTester';
-import WitnessTester from './testers/witnessTester';
-
-export {Circomkit, ProofTester, WitnessTester};
+export {Circomkit} from './circomkit';
+export {ProofTester, WitnessTester} from './testers';
 export type {CircuitSignals, CircuitConfig} from './types/circuit';
 export type {CircomkitConfig} from './types/circomkit';

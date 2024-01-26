@@ -5,7 +5,7 @@
     "allowUnusedLabels": false,
     "declaration": true,
     "forceConsistentCasingInFileNames": true,
-    "lib": ["ES2020"],
+    "lib": ["ES2022"],
     "module": "commonjs",
     "noEmitOnError": true,
     "noFallthroughCasesInSwitch": true,

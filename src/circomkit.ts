@@ -14,8 +14,7 @@ import type {
 } from './types/circomkit';
 import {randomBytes} from 'crypto';
 import {CircomWasmTester} from './types/circomTester';
-import WitnessTester from './testers/witnessTester';
-import ProofTester from './testers/proofTester';
+import {ProofTester, WitnessTester} from './testers/';
 import {prettyStringify, primeToName} from './utils';
 import {defaultConfig, colors, CURVES, PROTOCOLS} from './utils/config';
 import {exec} from 'child_process';

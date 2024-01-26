@@ -3,7 +3,7 @@ import type {CircomWasmTester} from '../types/circomTester';
 import {assert, expect} from 'chai';
 
 /** A utility class to test your circuits. Use `expectFail` and `expectPass` to test out evaluations. */
-export default class WitnessTester<IN extends readonly string[] = [], OUT extends readonly string[] = []> {
+export class WitnessTester<IN extends readonly string[] = [], OUT extends readonly string[] = []> {
   /** The underlying `circom_tester` object */
   private readonly circomWasmTester: CircomWasmTester;
   /** A dictionary of symbols, see {@link loadSymbols} */

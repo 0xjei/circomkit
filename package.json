@@ -12,9 +12,6 @@
     "LICENSE",
     "README.md"
   ],
-  "bin": "dist/bin/index.js",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
   "homepage": "https://github.com/erhant/circomkit#readme",
   "repository": {
     "type": "git",
@@ -35,6 +32,10 @@
     "format": "npx prettier --check ./src/**/*.ts ./tests/**/*.ts"
   },
   "devDependencies": {
+    "@parcel/config-default": "^2.11.0",
+    "@parcel/packager-ts": "^2.11.0",
+    "@parcel/transformer-typescript-tsc": "^2.11.0",
+    "@parcel/transformer-typescript-types": "^2.11.0",
     "@types/chai": "^4.3.4",
     "@types/mocha": "^10.0.1",
     "@types/mocha-each": "^2.0.0",
@@ -48,6 +49,7 @@
     "eslint-plugin-prettier": "^5.0.1",
     "mocha": "^10.2.0",
     "mocha-each": "^2.0.1",
+    "parcel": "^2.11.0",
     "prettier": "^3.1.0",
     "rimraf": "^5.0.1",
     "ts-node": "^10.9.1",
@@ -74,5 +76,44 @@
     "cli",
     "tooling",
     "blockchain"
-  ]
+  ],
+  "source": "src/index.ts",
+  "types": "lib/index.d.ts",
+  "cjs": "lib/index.cjs",
+  "mjs": "lib/index.mjs",
+  "bin": "lib/bin/index.mjs",
+  "exports": {
+    "types": "./lib/index.d.ts",
+    "import": "./lib/index.mjs",
+    "require": "./lib/index.cjs",
+    "default": "./lib/index.mjs"
+  },
+  "browser": {
+    "child_process": false
+  },
+  "targets": {
+    "cjs": {
+      "outputFormat": "commonjs",
+      "isLibrary": false,
+      "context": "node",
+      "scopeHoist": false,
+      "includeNodeModules": false,
+      "optimize": false
+    },
+    "mjs": {
+      "outputFormat": "esmodule",
+      "isLibrary": false,
+      "context": "node",
+      "scopeHoist": false,
+      "includeNodeModules": false,
+      "optimize": false
+    },
+    "bin": {
+      "source": "./src/bin/index.ts",
+      "outputFormat": "esmodule",
+      "context": "node",
+      "scopeHoist": false,
+      "includeNodeModules": false
+    }
+  }
 }
